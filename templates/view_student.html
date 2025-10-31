@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+  <h4>Student Details</h4>
+  <dl class="row">
+    <dt class="col-sm-3">Name</dt><dd class="col-sm-9">{{ student.name }}</dd>
+    <dt class="col-sm-3">Roll Number</dt><dd class="col-sm-9">{{ student.roll_number }}</dd>
+    {% for subj in subjects %}
+  <dt class="col-sm-3">{{ subj|capitalize }}</dt>
+  <dd class="col-sm-9">
+    {% if getattr(student, subj) is not none %}
+      {{ getattr(student, subj) }}
+    {% else %}
+      —
+    {% endif %}
+  </dd>
+{% endfor %}
+    <dt class="col-sm-3">Average</dt>
+    <dd class="col-sm-9">
+      {% if student.average() is not none %}
+        {{ student.average() }}
+      {% else %}
+        <span class="small-muted">No grades yet</span>
+      {% endif %}
+    </dd>
+  </dl>
+
+  <a class="btn btn-outline-primary" href="{{ url_for('add_grades', student_id=student.id) }}">Add/Update Grades</a>
+  <a class="btn btn-outline-secondary" href="{{ url_for('index') }}">Back</a>
+{% endblock %}

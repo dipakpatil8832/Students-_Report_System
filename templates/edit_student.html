@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+  <h4>Edit Student</h4>
+  <form method="post">
+    <div class="mb-3">
+      <label class="form-label">Name</label>
+      <input name="name" class="form-control" value="{{ student.name }}" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Roll Number</label>
+      <input name="roll_number" class="form-control" value="{{ student.roll_number }}" required>
+    </div>
+    <button class="btn btn-primary">Update</button>
+    <a class="btn btn-secondary" href="{{ url_for('view_student', student_id=student.id) }}">Cancel</a>
+  </form>
+{% endblock %}

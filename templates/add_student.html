@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+  <h4>Add Student</h4>
+  <form method="post">
+    <div class="mb-3">
+      <label class="form-label">Name</label>
+      <input name="name" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Roll Number</label>
+      <input name="roll_number" class="form-control" required>
+    </div>
+    <button class="btn btn-primary">Add</button>
+    <a class="btn btn-secondary" href="{{ url_for('index') }}">Cancel</a>
+  </form>
+{% endblock %}

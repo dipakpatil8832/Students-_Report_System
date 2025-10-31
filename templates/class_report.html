@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+  <h4>Class Report</h4>
+
+  <div class="mb-4">
+    <h5>Subject Summaries</h5>
+    <table class="table">
+      <thead>
+        <tr><th>Subject</th><th>Average</th><th>Topper (Roll - Name)</th></tr>
+      </thead>
+      <tbody>
+        {% for subj, data in subject_summaries.items() %}
+          <tr>
+            <td>{{ subj|capitalize }}</td>
+            <td>
+              {% if data.average is not none %}
+                {{ data.average }}
+              {% else %}
+                <span class="small-muted">No scores</span>
+              {% endif %}
+            </td>
+            <td>
+              {% if data.topper %}
+                {{ data.topper.roll_number }} — {{ data.topper.name }}
+              {% else %}
+                <span class="small-muted">—</span>
+              {% endif %}
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <div>
+    <h5>Class Overall Average</h5>
+    {% if class_average is not none %}
+      <p><strong>{{ class_average }}</strong></p>
+    {% else %}
+      <p><span class="small-muted">No student averages yet</span></p>
+    {% endif %}
+  </div>
+
+  <a class="btn btn-secondary" href="{{ url_for('index') }}">Back</a>
+{% endblock %}

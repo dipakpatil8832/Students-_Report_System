@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+  <h4>Assign Grades — {{ student.name }} ({{ student.roll_number }})</h4>
+  <form method="post">
+    {% for subj in subjects %}
+      <div class="mb-3">
+        <label class="form-label">{{ subj|capitalize }}</label>
+        <input name="{{ subj }}" class="form-control" placeholder="0 - 100" value="{{ getattr(student, subj) if getattr(student, subj) is not none else '' }}">
+        <div class="form-text">Leave blank to keep empty.</div>
+      </div>
+    {% endfor %}
+    <button class="btn btn-primary">Save Grades</button>
+    <a class="btn btn-secondary" href="{{ url_for('view_student', student_id=student.id) }}">Cancel</a>
+  </form>
+{% endblock %}
