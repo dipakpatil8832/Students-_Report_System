@@ -11,7 +11,8 @@ app.config['SECRET_KEY'] = 'dev-secret-key'  # Change in production
 
 
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://root:Dipak%4014102003@localhost/student_tracker'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:password@host/db'
+
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
@@ -186,5 +187,6 @@ def search():
 # ---------------------- Run Application ----------------------
 if __name__ == '__main__':
     app.run(debug=True)
+
 
 
