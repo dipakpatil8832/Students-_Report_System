@@ -8,7 +8,7 @@ import os
 app = Flask(__name__)
 app.jinja_env.globals['getattr'] = getattr
 app.config['SECRET_KEY'] = 'dev-secret-key'  # Change in production
-import mysql.connector
+
 
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://root:Dipak%4014102003@localhost/student_tracker'
@@ -186,4 +186,5 @@ def search():
 # ---------------------- Run Application ----------------------
 if __name__ == '__main__':
     app.run(debug=True)
+
 
