@@ -10,8 +10,8 @@ This project demonstrates Python Flask web development, database integration wit
 ✅ Add new students (name, roll number)  
 ✅ Assign grades for subjects (Math, Science, English)  
 ✅ View student details and calculate average score  
-✅ Update or delete student records  
-✅ Class report view — shows subject averages and toppers  
+✅ Update or delete student records   
+✅ Class report view — shows subject ave rages and toppers  
 ✅ Simple Bootstrap UI (HTML templates)  
 ✅ Persistent MySQL storage  
 ✅ Deployable on any platform (GitHub, Render, Railway, etc.)
