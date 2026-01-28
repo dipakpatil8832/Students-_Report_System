@@ -3,11 +3,11 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.exc import IntegrityError
 from utils.helpers import validate_grade, calculate_average, subject_list
 import os
+       
 
-
-app = Flask(__name__)
+app = Flask(__name__)     
 app.jinja_env.globals['getattr'] = getattr
-app.config['SECRET_KEY'] = 'dev-secret-key'  # Change in production
+app.config['SECRET_KEY'] = 'dev-secret-key'  
 
 
 
@@ -187,6 +187,7 @@ def search():
 # ---------------------- Run Application ----------------------
 if __name__ == '__main__':
     app.run(debug=True)
+
 
 
 
