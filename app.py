@@ -28,7 +28,7 @@ def init_db():
 
 init_db()
 
-
+# class students 
 
 class Student(db.Model):
     __tablename__ = 'students'
@@ -187,6 +187,7 @@ def search():
 # ---------------------- Run Application ----------------------
 if __name__ == '__main__':
     app.run(debug=True)
+
 
 
 
